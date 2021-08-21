@@ -9,7 +9,7 @@ import java.io.IOException
 class RemoteCharacterRepository @Inject constructor(
     private val charactersAPI: CharactersApi
 ) : CharacterRepository {
-    override suspend fun getAPIResult(): Result<List<Character>> {
+    override suspend fun getAllCharacters(): Result<List<Character>> {
         val response = charactersAPI.getCharacters()
         return if (response.isSuccessful) {
             Result.Success(response.body()?.results!!)
