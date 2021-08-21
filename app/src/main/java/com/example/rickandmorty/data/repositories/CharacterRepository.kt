@@ -4,5 +4,5 @@ import com.example.rickandmorty.data.model.Character
 import com.example.rickandmorty.entity.Result
 
 interface CharacterRepository {
-    suspend fun getAPIResult(): Result<List<Character>>
+    suspend fun getAllCharacters(): Result<List<Character>>
 }
