@@ -1,9 +1,7 @@
 package com.example.rickandmorty.di.component
 
 import com.example.rickandmorty.Application
-import com.example.rickandmorty.di.module.ApplicationModule
-import com.example.rickandmorty.di.module.NetworkModule
-import com.example.rickandmorty.di.module.RepositoryModule
+import com.example.rickandmorty.di.module.*
 import dagger.Component
 import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
@@ -14,7 +12,10 @@ import javax.inject.Singleton
         ApplicationModule::class,
         AndroidSupportInjectionModule::class,
         NetworkModule::class,
-        RepositoryModule::class
+        RepositoryModule::class,
+        ActivityModule::class,
+        FragmentModule::class,
+        ViewModelFactoryModule::class
     ]
 )
 @Singleton

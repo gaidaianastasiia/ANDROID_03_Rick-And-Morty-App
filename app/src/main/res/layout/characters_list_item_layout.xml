@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/characterPictureImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/characterNameLabelTextView"
+        tools:src="@mipmap/ic_launcher" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterNameLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/characterStatusLabelTextView"
+        app:layout_constraintEnd_toStartOf="@+id/characterNameTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterPictureImageView"
+        tools:text="Name: " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterNameTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/characterNameLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/characterNameLabelTextView"
+        tools:text="Name" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterStatusLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/characterStatusTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterNameLabelTextView"
+        app:layout_constraintBottom_toTopOf="@+id/characterSpeciesLabelTextView"
+        tools:text="Status: " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterStatusTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/characterStatusLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/characterStatusLabelTextView"
+        app:layout_constraintBottom_toTopOf="@+id/characterSpeciesTextView"
+        tools:text="Alive" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterSpeciesLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/characterSpeciesTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterStatusLabelTextView"
+        app:layout_constraintBottom_toTopOf="@+id/characterGenderLabelTextView"
+        tools:text="Species: " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterSpeciesTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/characterSpeciesLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/characterSpeciesLabelTextView"
+        app:layout_constraintBottom_toTopOf="@+id/characterGenderTextView"
+        tools:text="Human" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterGenderLabelTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/characterGenderTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/characterSpeciesLabelTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Gender: " />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/characterGenderTextView"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/characterGenderLabelTextView"
+        app:layout_constraintTop_toTopOf="@+id/characterGenderLabelTextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:text="Male" />
+
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/character*LabelTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/"-->
+<!--        tools:text=": " />-->
+
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/character*TextView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/"-->
+<!--        tools:text="" />-->
+
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/character*LabelTextView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginEnd="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        tools:text=": " />-->
+
+<!--    <androidx.appcompat.widget.AppCompatTextView-->
+<!--        android:id="@+id/character*TextView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        tools:text="" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

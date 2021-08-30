@@ -1,6 +1,10 @@
 package com.example.rickandmorty.data.model
 
-data class Character(
+import com.example.rickandmorty.entity.Gender
+import com.example.rickandmorty.entity.Species
+import com.example.rickandmorty.entity.Status
+
+data class CharacterData(
     val id: Long,
     val name: String,
     val status: Status,

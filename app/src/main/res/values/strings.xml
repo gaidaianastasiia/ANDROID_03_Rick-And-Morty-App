@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">RickAndMorty</string>
     <string name="error_message">Oops! Something went wrong</string>
+    <string name="empty_state_message">The list is empty</string>
+
+    <!-- fragment_characters_list -->
+    <string name="characters_list_title">Rick and Morty characters</string>
+
+    <!--  character_status  -->
+    <string name="character_alive_status">Alive</string>
+    <string name="character_dead_status">Dead</string>
+    <string name="character_unknown_status">Unknown</string>
+
+    <!--  character_species  -->
+    <string name="character_alien_species">Alien</string>
+    <string name="character_human_species">Human</string>
+
+    <!--  character_gender  -->
+    <string name="character_female_gender">Female</string>
+    <string name="character_male_gender">Male</string>
+    <string name="character_unknown_gender">Unknown</string>
 </resources>
