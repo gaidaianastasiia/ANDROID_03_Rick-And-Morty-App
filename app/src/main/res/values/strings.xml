@@ -6,6 +6,12 @@
     <!-- fragment_characters_list -->
     <string name="characters_list_title">Rick and Morty characters</string>
 
+    <!--  character_labels  -->
+    <string name="character_name_label">Name: </string>
+    <string name="character_status_label">Status: </string>
+    <string name="character_species_label">Species: </string>
+    <string name="character_gender_label">Gender: </string>
+
     <!--  character_status  -->
     <string name="character_alive_status">Alive</string>
     <string name="character_dead_status">Dead</string>

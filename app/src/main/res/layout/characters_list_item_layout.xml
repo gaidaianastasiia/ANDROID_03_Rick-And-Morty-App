@@ -8,157 +8,96 @@
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/characterPictureImageView"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/characterNameLabelTextView"
         tools:src="@mipmap/ic_launcher" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterNameLabelTextView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/characterStatusLabelTextView"
+        android:text="@string/character_name_label"
         app:layout_constraintEnd_toStartOf="@+id/characterNameTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterPictureImageView"
-        tools:text="Name: " />
+        app:layout_constraintTop_toBottomOf="@+id/characterPictureImageView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterNameTextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/characterNameLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/characterNameLabelTextView"
-        tools:text="Name" />
+        tools:text="An animated series on adult-swim about the infinite adventures of Rick, a genius alcoholic and careless scientist, with his grandson Morty, a 14 year-old anxious boy who is not so smart. " />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterStatusLabelTextView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:text="@string/character_status_label"
         app:layout_constraintEnd_toStartOf="@+id/characterStatusTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterNameLabelTextView"
-        app:layout_constraintBottom_toTopOf="@+id/characterSpeciesLabelTextView"
-        tools:text="Status: " />
+        app:layout_constraintTop_toBottomOf="@+id/characterNameTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterStatusTextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/characterStatusLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/characterStatusLabelTextView"
-        app:layout_constraintBottom_toTopOf="@+id/characterSpeciesTextView"
-        tools:text="Alive" />
+        tools:text="An animated series on adult-swim about the infinite adventures of Rick, a genius alcoholic and careless scientist, with his grandson Morty, a 14 year-old anxious boy who is not so smart. " />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterSpeciesLabelTextView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:text="@string/character_species_label"
         app:layout_constraintEnd_toStartOf="@+id/characterSpeciesTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterStatusLabelTextView"
-        app:layout_constraintBottom_toTopOf="@+id/characterGenderLabelTextView"
-        tools:text="Species: " />
+        app:layout_constraintTop_toBottomOf="@+id/characterStatusTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterSpeciesTextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/characterSpeciesLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/characterSpeciesLabelTextView"
-        app:layout_constraintBottom_toTopOf="@+id/characterGenderTextView"
-        tools:text="Human" />
+        tools:text="An animated series on adult-swim about the infinite adventures of Rick, a genius alcoholic and careless scientist, with his grandson Morty, a 14 year-old anxious boy who is not so smart. " />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterGenderLabelTextView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="10dp"
+        android:text="@string/character_gender_label"
         app:layout_constraintEnd_toStartOf="@+id/characterGenderTextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/characterSpeciesLabelTextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="Gender: " />
+        app:layout_constraintTop_toBottomOf="@+id/characterSpeciesTextView" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/characterGenderTextView"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/characterGenderLabelTextView"
         app:layout_constraintTop_toTopOf="@+id/characterGenderLabelTextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:text="Male" />
-
-<!--    <androidx.appcompat.widget.AppCompatTextView-->
-<!--        android:id="@+id/character*LabelTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginEnd="10dp"-->
-<!--        android:layout_marginRight="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/"-->
-<!--        tools:text=": " />-->
-
-<!--    <androidx.appcompat.widget.AppCompatTextView-->
-<!--        android:id="@+id/character*TextView"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/"-->
-<!--        tools:text="" />-->
-
-<!--    <androidx.appcompat.widget.AppCompatTextView-->
-<!--        android:id="@+id/character*LabelTextView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginEnd="10dp"-->
-<!--        android:layout_marginRight="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        tools:text=": " />-->
-
-<!--    <androidx.appcompat.widget.AppCompatTextView-->
-<!--        android:id="@+id/character*TextView"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        tools:text="" />-->
+        tools:text="An animated series on adult-swim about the infinite adventures of Rick, a genius alcoholic and careless scientist, with his grandson Morty, a 14 year-old anxious boy who is not so smart. " />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
