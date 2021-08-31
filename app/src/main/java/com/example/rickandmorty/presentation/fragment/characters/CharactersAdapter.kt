@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.CharactersListItemLayoutBinding
 import com.example.rickandmorty.entity.Character
 import com.squareup.picasso.Picasso
