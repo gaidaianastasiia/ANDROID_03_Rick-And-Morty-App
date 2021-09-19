@@ -1,5 +1,5 @@
 # Rick and Morty
-Simple REST API application.
+Simple REST API application.  
 API: [https://rickandmortyapi.com/]( https://rickandmortyapi.com/)
  
 Were used:
