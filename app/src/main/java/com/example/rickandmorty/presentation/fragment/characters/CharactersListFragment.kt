@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.rickandmorty.databinding.FragmentCharactersListBinding
 import com.example.rickandmorty.presentation.base.BaseFragment
 import kotlin.reflect.KClass
+
 
 class CharactersListFragment : BaseFragment<
         CharactersListViewModel,
@@ -27,6 +29,7 @@ class CharactersListFragment : BaseFragment<
         super.onViewCreated(view, savedInstanceState)
         setAdapter()
         setObserve()
+        setListeners()
         viewModel.requestList()
     }
 
@@ -35,6 +38,14 @@ class CharactersListFragment : BaseFragment<
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         adapter = CharactersAdapter()
         recyclerView.adapter = adapter
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val lastVisibleItemPosition: Int =
+                    (recyclerView.layoutManager as GridLayoutManager).findLastVisibleItemPosition()
+                viewModel.onScrolled(lastVisibleItemPosition)
+            }
+        })
     }
 
     private fun setObserve() {
@@ -50,9 +61,21 @@ class CharactersListFragment : BaseFragment<
             showLoader(isLoaderVisible)
         }
 
+        viewModel.showRefreshing.observe(viewLifecycleOwner) { isRefreshingVisible ->
+            showRefreshing(isRefreshingVisible)
+        }
+
         viewModel.dataErrorResponse.observe(viewLifecycleOwner) {
             showErrorMessage()
         }
+    }
+
+    private fun setListeners() {
+        binding.swiperefresh.setOnRefreshListener { viewModel.onRefresh() }
+    }
+
+    private fun showRefreshing(isRefreshingVisible: Boolean) {
+        binding.swiperefresh.isRefreshing = isRefreshingVisible
     }
 
     private fun showEmptyState(isEmptyStateVisible: Boolean) {
