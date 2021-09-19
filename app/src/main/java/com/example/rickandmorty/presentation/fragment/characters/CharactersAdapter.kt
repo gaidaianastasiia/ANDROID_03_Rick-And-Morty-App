@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.CharactersListItemLayoutBinding
 import com.example.rickandmorty.entity.Character
 import com.squareup.picasso.Picasso
@@ -42,11 +43,23 @@ class CharactersAdapter : ListAdapter<Character, CharactersAdapter.ViewHolder>(D
         fun bind(character: Character) {
 
             itemBinding.let {
-                Picasso.get().load(character.image).into(it.characterPictureImageView)
+                Picasso.get()
+                    .load(character.image)
+                    .placeholder(R.drawable.default_placeholder)
+                    .error(R.drawable.default_placeholder)
+                    .into(it.characterPictureImageView)
+
                 it.characterNameTextView.text = character.name
+
                 it.characterStatusTextView.setText(character.status.stringRes)
-                it.characterSpeciesTextView.setText(character.species.stringRes)
-                it.characterGenderTextView.setText(character.gender.stringRes)
+
+                it.characterSpeciesTextView.setText(
+                    character.species?.stringRes ?: R.string.character_species_default_value
+                )
+
+                it.characterGenderTextView.setText(
+                    character.gender?.stringRes ?: R.string.character_gender_default_value
+                )
             }
         }
     }

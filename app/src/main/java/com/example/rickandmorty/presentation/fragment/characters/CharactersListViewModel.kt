@@ -29,22 +29,63 @@ class CharactersListViewModel @AssistedInject constructor(
     val showLoader: LiveData<Boolean>
         get() = _showLoader
 
+    private val _showRefreshing = MutableLiveData<Boolean>()
+    val showRefreshing: LiveData<Boolean>
+    get() = _showRefreshing
+
     private val _charactersList = MutableLiveData<List<Character>>()
     val charactersList: LiveData<List<Character>>
         get() = _charactersList
 
+    private val lastItemPositionOffset = 4
+    private var pageNumber: Long = 1
+
     fun requestList() {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(Dispatchers.Main) {
             fetchList()
         }
     }
 
-    private suspend fun fetchList() {
-        viewModelScope.launch(Dispatchers.Main) {
-            _showLoader.value = true
-        }
+    fun onRefresh() {
+        pageNumber = 1
 
-        getAllCharacters.invoke()
+        viewModelScope.launch(Dispatchers.Main) {
+            getAllCharacters.invoke(pageNumber)
+                .doOnSuccess { list ->
+                    _charactersList.value = list
+                    _showRefreshing.value = false
+                }
+                .doOnError { error -> onDataError(error) }
+        }
+    }
+
+    fun onScrolled(lastVisibleItemPosition: Int) {
+        if (isListEnd(lastVisibleItemPosition)) {
+            pageNumber++
+            viewModelScope.launch(Dispatchers.Main) {
+                getAllCharacters.invoke(pageNumber)
+                    .doOnSuccess { nextCharactersList ->
+                        _charactersList.value
+                            ?.plus(nextCharactersList)
+                            .let { updatedCharactersList ->
+                                _charactersList.value = updatedCharactersList
+                            }
+                    }
+                    .doOnError { error -> onDataError(error) }
+            }
+        }
+    }
+
+    private fun isListEnd(lastVisibleItemPosition: Int): Boolean {
+        val maxItemNumberPosition =
+            _charactersList.value?.size?.let { it - lastItemPositionOffset } ?: 0
+        return maxItemNumberPosition <= lastVisibleItemPosition - 1
+    }
+
+    private suspend fun fetchList() {
+        _showLoader.value = true
+
+        getAllCharacters.invoke(pageNumber)
             .doOnSuccess { list ->
                 updateList(list)
             }
@@ -52,10 +93,8 @@ class CharactersListViewModel @AssistedInject constructor(
     }
 
     private fun updateList(list: List<Character>) {
-        viewModelScope.launch(Dispatchers.Main) {
-            _showEmptyState.value = list.isEmpty()
-            _showLoader.value = false
-            _charactersList.value = list
-        }
+        _showEmptyState.value = list.isEmpty()
+        _showLoader.value = false
+        _charactersList.value = list
     }
 }

@@ -20,9 +20,14 @@
     <!--  character_species  -->
     <string name="character_alien_species">Alien</string>
     <string name="character_human_species">Human</string>
+    <string name="character_species_default_value">Unknown</string>
 
     <!--  character_gender  -->
     <string name="character_female_gender">Female</string>
     <string name="character_male_gender">Male</string>
     <string name="character_unknown_gender">Unknown</string>
+    <string name="character_gender_default_value">Unknown</string>
+
+    <!--  character_species_default_value  -->
+
 </resources>
